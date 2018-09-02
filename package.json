@@ -1,6 +1,6 @@
 {
   "name": "react-no-sleep",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "headless component to keep browser awake",
   "author": "malcolm-kee",
   "license": "MIT",
