@@ -13,15 +13,21 @@ npm install --save react-no-sleep
 ## Usage
 
 ```tsx
-import * as React from 'react'
+import * as React from 'react';
 
-import MyComponent from 'react-no-sleep'
+import ReactNoSleep from 'react-no-sleep';
 
 class Example extends React.Component {
-  render () {
+  render() {
     return (
-      <MyComponent />
-    )
+      <ReactNoSleep>
+        {({ isOn, enable, disable }) => (
+          <button onClick={isOn ? disable : enable}>
+            {isOn ? 'on' : 'off'}
+          </button>
+        )}
+      </ReactNoSleep>
+    );
   }
 }
 ```

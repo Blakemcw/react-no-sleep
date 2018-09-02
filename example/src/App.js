@@ -1,13 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import ExampleComponent from 'react-no-sleep'
+import ReactNoSleep from 'react-no-sleep';
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <ReactNoSleep>
+          {({ isOn, enable, disable }) => (
+            <button onClick={isOn ? disable : enable}>
+              {isOn ? 'on' : 'off'}
+            </button>
+          )}
+        </ReactNoSleep>
       </div>
-    )
+    );
   }
 }

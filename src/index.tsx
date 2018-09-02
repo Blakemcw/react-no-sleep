@@ -1,23 +1,52 @@
 /**
- * @class ExampleComponent
+ * @class ReactNoSleep
  */
 
-import * as React from 'react'
+import * as React from 'react';
+import NoSleepJs from 'nosleep.js';
 
-import styles from './styles.css'
+export type NoSleepProps = {
+  enable: () => void;
+  disable: () => void;
+  isOn: boolean;
+};
 
-export type Props = { text: string }
+export type Props = { children: (childProps: NoSleepProps) => JSX.Element };
 
-export default class ExampleComponent extends React.Component<Props> {
-  render() {
-    const {
-      text
-    } = this.props
+type States = {
+  isOn: boolean;
+};
 
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
+export default class ReactNoSleep extends React.Component<Props, States> {
+  constructor(props: Props) {
+    super(props);
+    this._noSleep = new NoSleepJs();
+    this.state = {
+      isOn: false
+    };
   }
+
+  render() {
+    return this.props.children({
+      isOn: this.state.isOn,
+      enable: this.handleEnable,
+      disable: this.handleDisable
+    });
+  }
+
+  handleEnable = () => {
+    this._noSleep.enable();
+    this.setState({
+      isOn: true
+    });
+  };
+
+  handleDisable = () => {
+    this._noSleep.disable();
+    this.setState({
+      isOn: false
+    });
+  };
+
+  _noSleep: NoSleepJs;
 }

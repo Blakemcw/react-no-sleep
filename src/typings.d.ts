@@ -6,3 +6,13 @@ declare module '*.css' {
   const content: { [className: string]: string };
   export default content;
 }
+
+declare module 'nosleep.js' {
+  class NoSleep {
+    constructor();
+    enable: () => void;
+    disable: () => void;
+  }
+
+  export default NoSleep;
+}
