@@ -1,11 +1,12 @@
 {
   "name": "react-no-sleep",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "headless component to keep browser awake",
   "author": "malcolm-kee",
   "license": "MIT",
   "repository": "malcolm-kee/react-no-sleep",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "engines": {
