@@ -48,5 +48,5 @@ export default class ReactNoSleep extends React.Component<Props, States> {
     });
   };
 
-  _noSleep: NoSleepJs;
+  private _noSleep: NoSleepJs;
 }
