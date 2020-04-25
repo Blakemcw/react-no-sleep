@@ -23,7 +23,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
-    "nosleep.js": "^0.7.0"
+    "nosleep.js": "https://github.com/Blakemcw/NoSleep.js/tarball/master"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
